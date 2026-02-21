@@ -34,7 +34,7 @@ const faqs = [
 export function FAQ() {
   return (
     <section className="px-6 py-24">
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto max-w-2xl lg:max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +42,7 @@ export function FAQ() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-[#FAFAFA] sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-[#FAFAFA] sm:text-4xl lg:text-5xl">
             FAQ
           </h2>
         </motion.div>
@@ -60,10 +60,10 @@ export function FAQ() {
                 value={`item-${i}`}
                 className="border-white/[0.06]"
               >
-                <AccordionTrigger className="text-left text-sm text-[#FAFAFA] hover:no-underline">
+                <AccordionTrigger className="text-left text-sm text-[#FAFAFA] hover:no-underline lg:text-base">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-[#888888]">
+                <AccordionContent className="text-sm leading-relaxed text-[#888888] lg:text-base">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

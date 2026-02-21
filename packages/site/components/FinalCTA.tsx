@@ -1,17 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { InstallCommand } from "@/components/InstallCommand";
 
 export function FinalCTA() {
-  const [copied, setCopied] = useState(false);
-
-  const copy = async () => {
-    await navigator.clipboard.writeText("npm i -g sigmacode");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <section className="relative px-6 py-32">
       {/* Green glow */}
@@ -19,13 +11,13 @@ export function FinalCTA() {
         <div className="h-[400px] w-[400px] rounded-full bg-[#00FF88] opacity-[0.03] blur-[100px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-2xl text-center">
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold tracking-tight text-[#FAFAFA] sm:text-5xl"
+          className="text-4xl font-bold tracking-tight text-[#FAFAFA] sm:text-5xl lg:text-6xl"
         >
           Ready to let Claude cook?
         </motion.h2>
@@ -37,40 +29,7 @@ export function FinalCTA() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-10 flex justify-center"
         >
-          <button
-            onClick={copy}
-            className="group flex items-center gap-4 rounded-lg border border-white/[0.08] bg-white/[0.03] px-6 py-4 font-mono text-sm transition-all hover:border-white/[0.12] hover:bg-white/[0.05]"
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-[#888888]">$</span>
-              <span className="text-[#FAFAFA]">npm i -g sigmacode</span>
-            </div>
-            <span className="flex items-center gap-1 text-[#888888] transition-colors group-hover:text-[#FAFAFA]">
-              {copied ? (
-                <motion.span
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  className="flex items-center gap-1 text-[#00FF88]"
-                >
-                  <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-xs">Copied</span>
-                </motion.span>
-              ) : (
-                <>
-                  <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9.75a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"
-                    />
-                  </svg>
-                  <span className="text-xs">Copy</span>
-                </>
-              )}
-            </span>
-          </button>
+          <InstallCommand />
         </motion.div>
 
         <motion.div
@@ -78,10 +37,10 @@ export function FinalCTA() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-8 flex items-center justify-center gap-6 text-sm text-[#888888]"
+          className="mt-8 flex items-center justify-center gap-6 text-sm text-[#888888] lg:text-base"
         >
           <a
-            href="https://github.com/anthropics/sigmacode"
+            href="https://github.com/sigmacode-dev/sigmacode"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 transition-colors hover:text-[#FAFAFA]"
@@ -97,7 +56,10 @@ export function FinalCTA() {
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 transition-colors hover:text-[#FAFAFA]"
           >
-            🚀 Upvote on Product Hunt
+            <svg className="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+            </svg>
+            Upvote on Product Hunt
           </a>
         </motion.div>
       </div>

@@ -71,7 +71,7 @@ export default function RootLayout({
               offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
               description:
                 "CLI tool that runs Claude Code with --dangerously-skip-permissions enabled by default.",
-              license: "https://opensource.org/licenses/MIT",
+              license: "https://creativecommons.org/licenses/by-nc/4.0/",
             }),
           }}
         />
