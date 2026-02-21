@@ -1,0 +1,18 @@
+{
+  "name": "sigmacode",
+  "version": "1.0.0",
+  "description": "Claude Code with no limits. Sigma mode.",
+  "bin": {
+    "sigmacode": "./bin/sigmacode.js"
+  },
+  "files": [
+    "bin/"
+  ],
+  "keywords": [
+    "claude",
+    "cli",
+    "ai",
+    "sigma"
+  ],
+  "license": "MIT"
+}
