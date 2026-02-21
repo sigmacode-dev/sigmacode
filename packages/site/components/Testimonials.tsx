@@ -89,7 +89,7 @@ function TestimonialCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, ease: "easeOut", type: "tween", delay: index * 0.04 }}
+      transition={{ duration: 0.5, delay: 0.15 + index * 0.04 }}
       className="group rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 transition-all hover:border-white/[0.1] hover:bg-white/[0.03] lg:p-6"
     >
       <p className="text-sm leading-relaxed text-[#FAFAFA]/90 lg:text-base">
@@ -116,10 +116,10 @@ export function Testimonials() {
     <section className="px-6 py-24">
       <div className="mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: "easeOut", type: "tween" }}
+          transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
           <h2 className="text-3xl font-bold tracking-tight text-[#FAFAFA] sm:text-4xl lg:text-5xl">
